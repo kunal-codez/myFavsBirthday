@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div id="heading">
+        A very Special Day
+    </div>
+    <div id="wish">
+        <span id="happy">Happy Birthday</span><br>
+        <span id="name">SAFALTA: The Great</span>
+    </div>
+    <div id="wishDescription">
+        <div style="display: flex; justify-content: center; gap: 20px; margin-top: 30px;">
+            <a href="photos.html">
+                <div id="photos" class="pages">Open Gallery</div>
+            </a>
+            <a href="letter.html">
+                <div id="letter" class="pages">Letter</div>
+            </a>
+        </div>
+    </div>
+
+</body>
+<nav class="footer-nav">
+    <a href="index.html" class="nav-item active">Home</a>
+    <a href="photos.html" class="nav-item">Memory</a>
+    <a href="letter.html" class="nav-item">Wish</a>
+</nav>
+    <script>
+        const emojis = ['🎂', '🎉'];
+        for (let i = 0; i < 20; i++) {
+            const el = document.createElement('div');
+            el.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+            el.style.position = 'absolute';
+            el.style.top = '-50px';
+            el.style.left = Math.random() * 100 + 'vw';
+            el.style.fontSize = '32px';
+            el.style.animation = `fall ${Math.random() * 4 + 4}s linear infinite`;
+            el.style.animationDelay = Math.random() * 6 + 's';
+            document.body.appendChild(el);
+        }
+
+        const style = document.createElement('style');
+        style.innerHTML = `
+            @keyframes fall {
+                0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+                50% { transform: translateY(50vh) rotate(180deg); }
+                100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</html>
